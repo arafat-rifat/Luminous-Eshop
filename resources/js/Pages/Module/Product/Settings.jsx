@@ -6,6 +6,13 @@ import Select from "react-select";
 import "react-quill/dist/quill.snow.css";
 function ProductSettings() {
 
+    const options = [
+        { value: 'option1', label: ' 11' },
+        { value: 'option2', label: ' 12' },
+        { value: 'option3', label: ' 13' },
+        { value: 'option4', label: ' 14' },
+      ];
+
     const { flash, categories, sub_categories, brands, type, units } = usePage().props;
 
 
@@ -385,6 +392,25 @@ function ProductSettings() {
                                             )}
                                      </div>
                                      </div>
+
+                                     <div>
+                                    <label>View Wishlist Product Per Page *</label>
+                                    <Controller
+                                        control={control}
+                                        name="wishlist_product_per_page"
+                                        render={({ field }) => (
+                                            <Select
+                                                placeholder="Select an option"
+                                                isMulti
+                                                options={options}
+                                                defaultValue={[options[1], options[2] , options[3]]}
+
+                                              
+                                              
+                                            />
+                                        )}
+                                    />
+                                </div>
 
                                </div>
 
